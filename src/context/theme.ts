@@ -108,7 +108,7 @@ export const colors: IColors = {
     '800': '#005566',
     '900': '#002B33',
   },
-  bluae: {
+  blue: {
     '50': '#EAF3FA',
     '100': '#C5DCF1',
     '200': '#A0C6E8',
