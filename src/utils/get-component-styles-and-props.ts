@@ -1,5 +1,6 @@
 import { stylesArray } from './styles-arrays';
 import _ from 'lodash';
+import { IFontFamily, theme } from '../context';
 
 const getResponsiveStyleProps = (
   styleProps: Record<string, any | any[]>,
@@ -21,6 +22,22 @@ const getResponsiveStyleProps = (
 
     responsiveStyles[key] = value;
   });
+
+  // Add precedence for inline component styles
+  if (responsiveStyles?.style) {
+    responsiveStyles = { ...responsiveStyles, ...responsiveStyles?.style };
+  }
+
+  // Replace theme tokens
+  if (responsiveStyles['fontFamily']) {
+    if (responsiveStyles['fontFamily'] in theme.fontFamily) {
+      responsiveStyles['fontFamily'] =
+        theme.fontFamily[
+          (responsiveStyles['fontFamily'] as unknown) as keyof IFontFamily
+        ];
+    }
+  }
+
   return responsiveStyles;
 };
 
@@ -41,7 +58,7 @@ export default function getComponentStylesAndProps(
     restProps[key] = _allProps[key];
   });
 
-  const responsiveStyles = getResponsiveStyleProps(style, breakpointIndex);
+  let responsiveStyles = getResponsiveStyleProps(style, breakpointIndex);
 
   return [responsiveStyles, restProps];
 }

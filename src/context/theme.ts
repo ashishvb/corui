@@ -1,5 +1,12 @@
 export type ITheme = {
   breakpoints: IBreakPoints;
+  fontFamily: IFontFamily;
+};
+
+export type IFontFamily = {
+  mono: string;
+  heading: string;
+  body: string;
 };
 
 export type IBreakPoints = {
@@ -20,4 +27,9 @@ export const breakpoints: IBreakPoints = {
 
 export const theme: ITheme = {
   breakpoints: breakpoints,
+  fontFamily: {
+    mono: "'Inter', sans-serif",
+    heading: "'Inter', sans-serif",
+    body: "'Inter', sans-serif",
+  },
 };

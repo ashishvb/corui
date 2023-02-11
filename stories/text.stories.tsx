@@ -13,6 +13,7 @@ export const Basic: ComponentStory<typeof Text> = args => (
     fontSize={[65, 76, 87, 89]}
     color={['red', 'green', 'blue', 'yellow']}
     fontWeight="600"
+    fontFamily={['body', 'body']}
   >
     test
   </Text>

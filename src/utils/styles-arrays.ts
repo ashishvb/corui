@@ -200,4 +200,5 @@ export const stylesArray = [
   ...viewStyles,
   ...textStyles,
   ...imageStyles,
+  'style',
 ];
