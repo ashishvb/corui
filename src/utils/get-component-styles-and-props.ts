@@ -13,7 +13,7 @@ const getResponsiveStyleProps = (
     const styles: any | any[] = styleProps[key];
     let value = styles;
 
-    if (styles?.length) {
+    if (typeof styles !== 'string' && styles?.length) {
       if (typeof styles[breakpointIndex] !== 'undefined') {
         value = styles[breakpointIndex];
       } else {
@@ -55,11 +55,15 @@ const getColor = (_key: string | undefined, _colorsObj: IColors) => {
   if (_key) {
     let color = _key;
 
+    console.log('KEY', _key);
+
     //  eg _key = "burgundy"
     if (_key in _colorsObj) {
       // eg burgundy = "#800020"
+      console.log(typeof _colorsObj[_key], _key);
       if (typeof _colorsObj[_key] === 'string') {
         color = _colorsObj[_key] as string;
+        return color;
       }
 
       // eg burgundy  = {}
