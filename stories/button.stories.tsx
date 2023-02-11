@@ -9,20 +9,20 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 export const Basic: ComponentStory<typeof Button> = args => (
-  <Button
-    alignItems="center"
-    justifyContent="center"
-    paddingVertical={12}
-    paddingHorizontal={32}
-    borderRadius={4}
-    elevation={2}
-    backgroundColor={['blue', 'green', 'red']}
-    maxWidth={150}
-  >
+  <Button {...args}>
     <Text color={'white'} textAlign="center">
       test Button
     </Text>
   </Button>
 );
 
-Basic.args = {};
+Basic.args = {
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingVertical: [12],
+  paddingHorizontal: [32],
+  borderRadius: 4,
+  elevation: 2,
+  backgroundColor: ['blue', 'green', 'red'],
+  maxWidth: 150,
+};
