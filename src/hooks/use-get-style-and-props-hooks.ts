@@ -25,10 +25,9 @@ export const useGetStyleAndPropsHook = (props: any) => {
     measurement?.width
   );
 
-  const [style, restProps] = getComponentStylesAndProps(
-    props,
-    breakpointIndex,
-    theme
+  const [style, restProps] = React.useMemo(
+    () => getComponentStylesAndProps(props, breakpointIndex, theme),
+    [props, breakpointIndex, theme]
   );
 
   return [style, restProps];
