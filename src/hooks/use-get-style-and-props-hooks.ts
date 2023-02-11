@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Dimensions } from 'react-native';
 import { getBreakPointIndex } from '../utils/get-breakpoints-index';
-import getComponentStylesAndProps from '../utils/get-component-styles-and-props';
+import { getComponentStylesAndProps } from '../utils';
 import { useTheme } from './use-theme';
 
 export const useGetStyleAndPropsHook = (props: any) => {

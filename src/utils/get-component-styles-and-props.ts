@@ -91,7 +91,7 @@ const getColor = (_key: string | undefined, _colorsObj: IColors) => {
 };
 
 // Component Prop types = T
-export default function getComponentStylesAndProps(
+export function getComponentStylesAndProps(
   _allProps: Record<string, any>,
   breakpointIndex: number,
   theme: ITheme
