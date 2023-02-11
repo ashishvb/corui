@@ -25,7 +25,11 @@ export const useGetStyleAndPropsHook = (props: any) => {
     measurement?.width
   );
 
-  const [style, restProps] = getComponentStylesAndProps(props, breakpointIndex);
+  const [style, restProps] = getComponentStylesAndProps(
+    props,
+    breakpointIndex,
+    theme
+  );
 
   return [style, restProps];
 };

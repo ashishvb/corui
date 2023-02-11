@@ -11,7 +11,7 @@ export default {
 export const Basic: ComponentStory<typeof Text> = args => (
   <Text
     fontSize={[65, 76, 87, 89]}
-    color={['red', 'green', 'blue', 'yellow']}
+    color={['red', 'green', 'blue.50', 'pink', 'burgundy']}
     fontWeight="600"
     fontFamily={['body', 'body']}
   >
