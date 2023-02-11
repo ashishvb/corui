@@ -1,0 +1,6 @@
+.github
+.husky
+.storybook
+.vscode
+/stories
+/test

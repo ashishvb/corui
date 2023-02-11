@@ -11,3 +11,5 @@ yarn storybook
 ```
 
 This loads the component stories from `./stories` for testing and reference
+
+### Installation and usage
